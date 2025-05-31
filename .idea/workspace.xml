@@ -13,8 +13,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="package.json" />
         <option value="Python Script" />
+        <option value="package.json" />
       </list>
     </option>
   </component>
@@ -32,6 +32,7 @@
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
     &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;Python.index (1).executor&quot;: &quot;Run&quot;,
     &quot;Python.index.executor&quot;: &quot;Run&quot;,
     &quot;Python.vercel_agenda_app.executor&quot;: &quot;Run&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
@@ -45,8 +46,13 @@
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
-  <component name="RunManager" selected="Python.index (1)">
-    <configuration name="index (1)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\ronal\OneDrive\Documentos\MVP-2-Agenda-Final\api" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="app" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="MVP-2-Agenda-Final" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -60,7 +66,7 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/api/index.py" />
+      <option name="SCRIPT_NAME" value="C:\Users\ronal\OneDrive\Documentos\MVP-2-Agenda-Final\api\app.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -69,7 +75,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="index" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="app" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="MVP-2-Agenda-Final" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -83,7 +89,7 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="C:\Users\ronal\OneDrive\Documentos\MVP-2-Agenda-Final\api\index.py" />
+      <option name="SCRIPT_NAME" value="C:\Users\ronal\OneDrive\Documentos\MVP-2-Agenda-Final\api\app.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -117,9 +123,9 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.index (1)" />
-        <item itemvalue="Python.index" />
-        <item itemvalue="Python.index" />
+        <item itemvalue="Python.app" />
+        <item itemvalue="Python.app" />
+        <item itemvalue="Python.app" />
       </list>
     </recent_temporary>
   </component>
@@ -138,7 +144,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1748716658253</updated>
-      <workItem from="1748716659420" duration="1776000" />
+      <workItem from="1748716659420" duration="2713000" />
     </task>
     <servers />
   </component>
@@ -146,7 +152,8 @@
     <option name="version" value="3" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/MVP_2_Agenda_Final$vercel_agenda_app.coverage" NAME="vercel_agenda_app Coverage Results" MODIFIED="1748718430275" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/MVP_2_Agenda_Final$index__1_.coverage" NAME="index (1) Coverage Results" MODIFIED="1748718703590" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/api" />
+    <SUITE FILE_PATH="coverage/MVP_2_Agenda_Final$vercel_agenda_app.coverage" NAME="index Coverage Results" MODIFIED="1748718503923" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/MVP_2_Agenda_Final$index.coverage" NAME="index Coverage Results" MODIFIED="1748718343330" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>
