@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minha Agenda de Compromissos</title>
+    <style>
+        body { font-family: sans-serif; margin: 20px; }
+        .compromisso-item { border: 1px solid #ccc; padding: 10px; margin-bottom: 10px; }
+        .compromisso-item h3 { margin-top: 0; }
+        form div { margin-bottom: 10px; }
+        label { display: block; margin-bottom: 5px; }
+        input[type="text"], textarea { width: 300px; padding: 8px; border: 1px solid #ddd; }
+        button { padding: 10px 15px; background-color: #007bff; color: white; border: none; cursor: pointer; }
+        button:hover { background-color: #0056b3; }
+        #messages { margin-top: 20px; padding: 10px; border-radius: 5px; }
+        .success { background-color: #d4edda; color: #155724; border: 1px solid #c3e6cb; }
+        .error { background-color: #f8d7da; color: #721c24; border: 1px solid #f5c6cb; }
+    </style>
+</head>
+<body>
+    <h1>Minha Agenda</h1>
+
+    <div id="messages"></div>
+
+    <h2>Compromissos Agendados</h2>
+    <div id="lista-compromissos">
+        {% if compromissos %}
+            {% for compromisso in compromissos %}
+            <div class="compromisso-item">
+                <h3>{{ compromisso.titulo }}</h3>
+                <p><strong>Data:</strong> {{ compromisso.data }}</p>
+                <p><strong>Hora:</strong> {{ compromisso.hora }}</p>
+                {% if compromisso.descricao %}
+                <p><strong>Descrição:</strong> {{ compromisso.descricao }}</p>
+                {% endif %}
+                <p><small>ID: {{ compromisso.id }}</small></p>
+            </div>
+            {% endfor %}
+        {% else %}
+            <p>Nenhum compromisso agendado ainda.</p>
+        {% endif %}
+    </div>
+
+    <h2>Adicionar Novo Compromisso</h2>
+    <form id="form-novo-compromisso">
+        <div>
+            <label for="titulo">Título:</label>
+            <input type="text" id="titulo" name="titulo" required>
+        </div>
+        <div>
+            <label for="data">Data (AAAA-MM-DD):</label>
+            <input type="text" id="data" name="data" placeholder="Ex: 2024-12-25" required>
+        </div>
+        <div>
+            <label for="hora">Hora (HH:MM):</label>
+            <input type="text" id="hora" name="hora" placeholder="Ex: 14:30" required>
+        </div>
+        <div>
+            <label for="descricao">Descrição (Opcional):</label>
+            <textarea id="descricao" name="descricao" rows="3"></textarea>
+        </div>
+        <button type="submit">Agendar Compromisso</button>
+    </form>
+
+    <script>
+        const form = document.getElementById('form-novo-compromisso');
+        const messagesDiv = document.getElementById('messages');
+
+        function showMessage(message, type) {
+            messagesDiv.textContent = message;
+            messagesDiv.className = 'messages ' + type;
+            messagesDiv.style.display = 'block';
+            setTimeout(() => {
+                messagesDiv.style.display = 'none';
+            }, 3000); // Esconde a mensagem após 3 segundos
+        }
+
+        form.addEventListener('submit', async (event) => {
+            event.preventDefault();
+
+            const titulo = document.getElementById('titulo').value;
+            const data = document.getElementById('data').value;
+            const hora = document.getElementById('hora').value;
+            const descricao = document.getElementById('descricao').value;
+
+            try {
+                const response = await fetch('/api/compromissos', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ titulo, data, hora, descricao }),
+                });
+
+                const result = await response.json();
+
+                if (response.ok) {
+                    showMessage('Compromisso agendado com sucesso!', 'success');
+                    // Recarrega a página para ver o novo compromisso na lista
+                    window.location.reload();
+                } else {
+                    showMessage(`Erro: ${result.erro || 'Ocorreu um erro ao agendar.'}`, 'error');
+                }
+            } catch (error) {
+                console.error('Erro na requisição:', error);
+                showMessage('Erro de conexão ou requisição.', 'error');
+            }
+        });
+
+        // Exemplo de como usar a API via JavaScript (você pode expandir isso)
+        console.log("Para testar as APIs (GET, PUT, DELETE), use o console do navegador ou ferramentas como Postman/Insomnia.");
+        console.log("GET /api/compromissos para listar todos.");
+        console.log("GET /api/compromissos/{id_do_compromisso} para um específico.");
+        console.log("PUT /api/compromissos/{id_do_compromisso} para atualizar.");
+        console.log("DELETE /api/compromissos/{id_do_compromisso} para remover.");
+    </script>
+</body>
+</html>
